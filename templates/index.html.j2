@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Notes App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_index.css') }}">
+</head>
+<body>
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+      <div class="col-md-3 mb-2 mb-md-0">
+        <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
+          <img src="{{url_for('static', filename='3d-notes-icon-png.webp')}}" alt="Логотип сайта" width="80" height="70">
+        </a>
+      </div>
+
+      <ul class="nav col-12 col-md-auto mb-2 d-flex justify-content-start mb-md-0">
+        <li><a href={{url_for('index')}} class="nav-link px-2">Главная</a></li>
+        <li><a href={{url_for('about')}} class="nav-link px-2">О сайте</a></li>
+        <li><a href={{url_for('dlyachegozametki')}} class="nav-link px-2">Для чего ввести заметки?</a></li>
+      </ul>
+    </header>
+  <div class="topic">
+        <a class="add-note" href="{{ url_for('create') }}">Add a New Note</a>
+    <ul>
+        {% for topic in topics %}
+            <li><a href="{{ url_for('topic', topic=topic) }}">{{ topic }}</a></li>
+        {% endfor %}
+    </ul>
+  </div>
+
+</body>
+</html>

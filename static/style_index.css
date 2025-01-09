@@ -1,0 +1,91 @@
+/* Основные стили для документа */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    color: #333;
+}
+
+/* Минимальные стили для ссылок */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Стиль для блока с темами */
+.topic {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 30px;
+}
+
+/* Контейнер для заголовка и кнопки */
+.topic-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px; /* Отступ от списка */
+    padding: 0 10px;
+}
+
+/* Стили для заголовка Topics */
+.topic-header h1 {
+    font-size: 1.8rem;
+    margin: 0;
+    color: #0084ff;
+}
+
+/* Стили для списка тем */
+.topic ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; /* Убираем отступы сверху */
+    max-width: 600px;
+    width: 100%;
+}
+
+.topic ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+.topic ul li:last-child {
+    border-bottom: none;
+}
+
+.topic ul li a {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.topic ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Стили для кнопки "Add a New Note" */
+.add-note {
+    padding: 10px 20px;
+    background-color: #2883a7;
+    color: #fff;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.add-note:hover {
+    background-color: #215d88;
+}

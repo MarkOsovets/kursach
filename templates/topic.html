@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Notes for {{ topic }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles_topic.css') }}">
+</head>
+<body>
+    <h1>{{ topic }}</h1>
+    {% if notes %}
+        <ul>
+            {% for note in notes %}
+                <li>
+                    <h2>{{ note.title }}</h2>
+                    <p>{{ note.content }}</p>
+                    <!-- Кнопка для удаления -->
+                    <form method="POST" action="{{ url_for('delete', title=note.title) }}" class="button-delete">
+                        <button type="submit">Delete</button>
+                    </form>
+                    <!-- Кнопка для редактирования -->
+                    <a class="button-edit" href="{{ url_for('edit', title=note.title) }}">
+                        <button type="button">Edit</button>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No notes available for this topic.</p>
+    {% endif %}
+    <a href="{{ url_for('index') }}">Back to Topics</a>
+</body>
+</html>
