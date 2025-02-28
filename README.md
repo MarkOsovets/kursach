@@ -1,2 +1,1 @@
-# kursach
-курсовая (веб-сайт для заметок на flask)
+# website for notes using the flask framework
